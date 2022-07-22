@@ -28,7 +28,7 @@ output "client_key" {
   description = "GKE cluster client key"
 }
 
-output "encodec_cluster_ca_certificate" {
+output "encoded_cluster_ca_certificate" {
   value       = base64decode(google_container_cluster.primary.master_auth.0.cluster_ca_certificate)
   description = "base64-decoded cluster CA certificate"
 }
