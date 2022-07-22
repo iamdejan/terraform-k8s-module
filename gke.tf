@@ -11,6 +11,11 @@ resource "google_container_cluster" "primary" {
 
   network    = google_compute_network.vpc.name
   subnetwork = google_compute_subnetwork.subnet.name
+
+  ip_allocation_policy {
+    cluster_ipv4_cidr_block = "10.244.0.0/14"
+    services_ipv4_cidr_block = "10.248.0.0/20"
+  }
 }
 
 # Separately Managed Node Pool
